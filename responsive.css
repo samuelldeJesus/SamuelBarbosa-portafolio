@@ -1,0 +1,418 @@
+
+/* =========================================
+   1. TABLETS Y PANTALLAS MEDIANAS
+========================================= */
+
+@media screen and (max-width: 1024px) {
+
+    body {
+        padding: 15px;
+    }
+
+    .caja_principal {
+        width: 100%;
+        height: 94vh;
+    }
+
+    .perfil {
+        width: 250px;
+        min-width: 250px;
+        padding: 30px 17px;
+    }
+
+    .perfil_foto img {
+        width: 125px;
+        height: 125px;
+    }
+
+    .pagina {
+        padding: 25px;
+    }
+
+    .info_hero {
+        min-height: 310px;
+        padding: 30px;
+    }
+
+    .info_cajas {
+        gap: 15px;
+    }
+
+    .info_cajas-caja {
+        padding: 18px;
+    }
+
+    .portafolio_grid {
+        gap: 16px;
+    }
+
+    .proyecto_imagen {
+        height: 180px;
+    }
+}
+
+/* =========================================
+   2. BOTÓN OCULTAR PERFIL - TABLETS
+========================================= */
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .caja_principal {
+        position: relative;
+    }
+
+    .toggle_perfil {
+        position: absolute;
+
+        left: 250px;
+        top: 50%;
+
+        transform: translate(-50%, -50%);
+
+        width: 36px;
+        height: 36px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+
+        color: var(--azul);
+        background: var(--fondo-tarjeta);
+
+        border: 1px solid var(--azul);
+        border-radius: 50%;
+
+        box-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+
+        font-size: 13px;
+
+        cursor: pointer;
+        z-index: 100;
+
+        transition: var(--transicion);
+    }
+
+    .toggle_perfil:hover {
+        color: var(--fondo);
+        background: var(--azul);
+
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .caja_principal.perfil_oculto .perfil {
+        display: none;
+    }
+
+    .caja_principal.perfil_oculto .informacion {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .caja_principal.perfil_oculto .toggle_perfil {
+        left: 5px;
+    }
+}
+
+/* =========================================
+   3. TABLETS PEQUEÑAS
+========================================= */
+
+@media screen and (max-width: 850px) {
+
+    .info_header {
+        padding: 0 18px;
+    }
+
+    .info_header ul {
+        gap: 4px;
+    }
+
+    .info_header li a {
+        padding: 10px 11px;
+        font-size: 12px;
+    }
+
+    .info_header li a i {
+        font-size: 13px;
+    }
+
+    .info_cajas,
+    .sobre_mi_cajas {
+        grid-template-columns: 1fr;
+    }
+
+    .portafolio_grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .proyecto_imagen {
+        height: 155px;
+    }
+}
+
+/* =========================================
+   4. MÓVILES
+========================================= */
+
+@media screen and (max-width: 768px) {
+
+    body {
+        display: block;
+        padding: 0;
+    }
+
+    .caja_principal {
+        width: 100%;
+        max-width: none;
+        height: auto;
+        min-height: 100vh;
+
+        display: flex;
+        flex-direction: column;
+
+        border: none;
+        border-radius: 0;
+        overflow: visible;
+    }
+
+    /* Perfil */
+
+    .perfil {
+        width: 100%;
+        min-width: 0;
+
+        padding: 28px 22px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--borde);
+
+        overflow: visible;
+    }
+
+    .perfil_foto img {
+        width: 115px;
+        height: 115px;
+    }
+
+    .perfil_iconos {
+        max-width: 350px;
+    }
+
+    .perfil_button {
+        max-width: 350px;
+        margin-top: 25px;
+        padding-top: 0;
+    }
+
+    .toggle_perfil {
+        display: none !important;
+    }
+
+    /* Contenido */
+
+    .informacion {
+        width: 100%;
+        height: auto;
+        min-height: 600px;
+    }
+
+    /* Menú */
+
+    .info_header {
+        min-height: 65px;
+
+        justify-content: center;
+        padding: 8px 10px;
+    }
+
+    .info_header ul {
+        width: 100%;
+        justify-content: center;
+        gap: 3px;
+    }
+
+    .info_header li a {
+        flex-direction: column;
+        gap: 5px;
+
+        padding: 9px 12px;
+
+        font-size: 11px;
+    }
+
+    .info_header li a i {
+        font-size: 15px;
+    }
+
+    /* Scroll */
+
+    .contenido_scroll {
+        overflow: visible;
+    }
+
+    .pagina {
+        padding: 20px;
+    }
+
+    .pagina.active {
+        display: block;
+    }
+
+    /* Hero */
+
+    .info_hero {
+        min-height: 360px;
+        padding: 25px;
+    }
+
+    .info_hero picture::after {
+        background: rgba(8, 13, 24, 0.83);
+    }
+
+    .info_hero-texto h2 {
+        font-size: 29px;
+    }
+
+    .info_hero-texto .texto {
+        font-size: 13px;
+    }
+
+    .info_hero-bloques {
+        gap: 7px;
+    }
+
+    .info_hero-bloques p {
+        padding: 7px 10px;
+        font-size: 11px;
+    }
+
+    /* Cajas de inicio */
+
+    .info_cajas {
+        grid-template-columns: 1fr;
+    }
+
+    .info_cajas-caja {
+        padding: 20px;
+    }
+
+    /* Sobre mí */
+
+    .sobre_mi_presentacion {
+        flex-direction: column;
+        text-align: center;
+        padding: 22px;
+    }
+
+    .sobre_mi_imagen img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .sobre_mi_cajas {
+        grid-template-columns: 1fr;
+    }
+
+    .sobre_mi_habilidades {
+        padding: 20px;
+    }
+
+    .sobre_mi_tecnologias {
+        gap: 8px;
+    }
+
+    .sobre_mi_tecnologias span {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+
+    /* Portafolio */
+
+    .portafolio_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proyecto_imagen {
+        height: 220px;
+    }
+
+    .proyecto_info {
+        padding: 20px;
+    }
+}
+
+/* =========================================
+   5. MÓVILES PEQUEÑOS
+========================================= */
+
+@media screen and (max-width: 480px) {
+
+    .pagina {
+        padding: 15px;
+    }
+
+    .info_header li a {
+        padding: 9px 10px;
+        font-size: 10px;
+    }
+
+    .info_header li a i {
+        font-size: 14px;
+    }
+
+    .info_hero {
+        min-height: 390px;
+        padding: 22px;
+    }
+
+    .info_hero-texto h2 {
+        font-size: 25px;
+    }
+
+    .info_hero-texto .texto {
+        font-size: 12px;
+    }
+
+    .destaque_p {
+        font-size: 10px;
+    }
+
+    .info_cajas-caja {
+        gap: 12px;
+        padding: 16px;
+    }
+
+    .caja-icon {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        font-size: 16px;
+    }
+
+    .sobre_mi_titulo h2,
+    .portafolio_titulo h2 {
+        font-size: 26px;
+    }
+
+    .sobre_mi_presentacion {
+        padding: 18px;
+    }
+
+    .sobre_mi_texto h3 {
+        font-size: 19px;
+    }
+
+    .proyecto_imagen {
+        height: 190px;
+    }
+
+    .proyecto_info h3 {
+        font-size: 16px;
+    }
+
+    .proyecto_info p {
+        font-size: 12px;
+    }
+}
