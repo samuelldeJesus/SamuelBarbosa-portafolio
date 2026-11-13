@@ -416,3 +416,96 @@
         font-size: 12px;
     }
 }
+
+/* ========================================
+   BOTÓN OCULTAR CONTACTO - TABLETS
+======================================== */
+
+.toggle_perfil {
+    display: none;
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+
+    .caja_principal {
+        position: relative;
+    }
+
+    /* ---------- Perfil: se encoge con transición ---------- */
+
+    .perfil {
+        overflow: hidden;
+        transition: width 0.4s ease, opacity 0.3s ease, visibility 0s linear 0s;
+    }
+
+    /* El contenido del perfil mantiene su ancho y no se reorganiza al encogerse */
+    .perfil > * {
+        min-width: 260px;
+    }
+
+    /* ---------- Botón ---------- */
+
+    .toggle_perfil {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        position: absolute;
+        left: 260px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+        width: 34px;
+        height: 34px;
+
+        border: 2px solid var(--blanco);
+        border-radius: 50%;
+
+        background-color: var(--azul-cajatexto);
+        color: var(--azul-principal);
+
+        font-size: 13px;
+
+        box-shadow: 2px 2px 8px var(--sombra-boton);
+
+        cursor: pointer;
+        z-index: 100;
+
+        /* El botón se desliza al mismo ritmo que el perfil */
+        transition: left 0.4s ease,
+                    background-color 0.2s ease,
+                    color 0.2s ease,
+                    transform 0.2s ease;
+    }
+
+    .toggle_perfil:hover {
+        background-color: var(--azul-principal);
+        color: var(--blanco);
+
+        transform: translate(-50%, -50%) scale(1.12);
+    }
+
+    /* La flecha gira al ocultar */
+    .toggle_perfil i {
+        transition: transform 0.4s ease;
+    }
+
+    /* ---------- Estado: perfil oculto ---------- */
+
+    .caja_principal.perfil_oculto .perfil {
+        width: 0;
+        opacity: 0;
+        visibility: hidden;
+
+        /* visibility se aplica al terminar la animación */
+        transition: width 0.4s ease, opacity 0.3s ease, visibility 0s linear 0.4s;
+    }
+
+    .caja_principal.perfil_oculto .toggle_perfil {
+        left: 17px;
+    }
+
+    .caja_principal.perfil_oculto .toggle_perfil i {
+        transform: rotate(180deg);
+    }
+}
